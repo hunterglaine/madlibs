@@ -58,15 +58,16 @@ def show_madlib_form():
 def show_madlib():
     """Show a madlib game"""
 
-    person = request.args.get("game-person")
-    color = request.args.get("game-color")
-    noun = request.args.get("game-noun")
-    adjective = request.args.get("game-adjective")
+    person = request.args.get("game_person")
+    color = request.args.get("game_color")
+    noun = request.args.get("game_noun")
+    adjective = request.args.get("game_adjective")
 
-    if player_response == "yes":
-        return render_template("game.html")
-    else:
-        return render_template("goodbye.html")
+    return render_template("madlib.html", 
+                            game_person=person,
+                            game_color=color,
+                            game_noun=noun,
+                            game_adjective=adjective)
 
 
 if __name__ == '__main__':

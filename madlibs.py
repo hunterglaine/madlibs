@@ -67,12 +67,19 @@ def show_madlib():
     color = request.args.get("name_attr_color")
     noun = request.args.get("name_attr_noun")
     adjective = request.args.get("name_attr_adjective")
+    weapon = request.args.get("name_attr_weapon")
+    dessert = choice(request.args.getlist("name_attr_dessert"))
+    print(f'\n\n\n\n {dessert} \n\n\n\n\n')
+    prefix = request.args.get("name_attr_prefix")
 
     return render_template("madlib.html", 
                             name_attr_person=person,
                             name_attr_color=color,
                             name_attr_noun=noun,
-                            name_attr_adjective=adjective)
+                            name_attr_adjective=adjective,
+                            name_attr_weapon=weapon,
+                            name_attr_dessert=dessert,
+                            name_attr_prefix=prefix)
 
 
 if __name__ == '__main__':
